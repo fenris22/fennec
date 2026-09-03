@@ -1,6 +1,7 @@
 package cx.tfe.fennec
 
 import cx.tfe.fennec.commands.mainCommand
+import cx.tfe.fennec.config.ConfigManager
 import cx.tfe.fennec.events.Event
 import cx.tfe.fennec.events.EventBus
 import cx.tfe.fennec.features.impl.safari.SafariOverlay
@@ -39,6 +40,9 @@ object Fennec : ModInitializer {
 				mainCommand
 			).forEach { commodore -> commodore.register(dispatcher) }
 		})
+
+		ConfigManager.load()
+
 		// Drawing is registered once, not on module toggle — SafariOverlay.render()
 		// checks SafariInstanceTracker.inSafariInstance itself rather than `enabled`.
 		HudElementRegistry.addLast(id("safari_overlay"), SafariOverlay::render)
@@ -48,6 +52,8 @@ object Fennec : ModInitializer {
 		EventBus.register(BiomeTracker)
 		EventBus.register(SafariInstanceTracker)
 		EventBus.register(CritterDetectionTracker)
+
+		if (ConfigManager.config.safariOverlayEnabled) SafariOverlay.toggle()
 
 		LOGGER.info("Initialized fennec mod!")
 	}

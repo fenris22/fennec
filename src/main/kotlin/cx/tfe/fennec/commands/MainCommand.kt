@@ -2,7 +2,9 @@ package cx.tfe.fennec.commands
 
 import com.github.stivais.commodore.Commodore
 import cx.tfe.fennec.Fennec.DEV_MODE
+import cx.tfe.fennec.config.ConfigManager
 import cx.tfe.fennec.features.ModuleManager
+import cx.tfe.fennec.features.impl.safari.SafariOverlay
 import cx.tfe.fennec.util.Helpers.tell
 
 val mainCommand = Commodore("fennec") {
