@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory
 
 object Fennec : ModInitializer {
 
-	const val DEV_MODE: Boolean = true
+	const val DEV_MODE: Boolean = false
 	const val MOD_ID: String = "fennec"
 
 	private val LOGGER = LoggerFactory.getLogger(MOD_ID)
