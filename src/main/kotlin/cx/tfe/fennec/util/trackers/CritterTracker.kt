@@ -1,4 +1,4 @@
-package cx.tfe.fennec.util
+package cx.tfe.fennec.util.trackers
 
 import com.google.common.eventbus.Subscribe
 import cx.tfe.fennec.data.Critters

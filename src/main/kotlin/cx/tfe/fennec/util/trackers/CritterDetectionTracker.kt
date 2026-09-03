@@ -4,7 +4,6 @@ import com.google.common.eventbus.Subscribe
 import cx.tfe.fennec.Fennec
 import cx.tfe.fennec.data.Critters
 import cx.tfe.fennec.events.Event
-import cx.tfe.fennec.util.CritterTracker
 import cx.tfe.fennec.util.Helpers.debug
 import cx.tfe.fennec.util.Helpers.noControlCodes
 import net.minecraft.world.entity.decoration.ArmorStand

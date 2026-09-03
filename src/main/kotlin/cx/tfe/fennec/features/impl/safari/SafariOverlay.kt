@@ -7,7 +7,7 @@ import cx.tfe.fennec.features.Category
 import cx.tfe.fennec.features.Module
 import cx.tfe.fennec.util.trackers.BiomeTracker
 import cx.tfe.fennec.util.trackers.CritterDetectionTracker
-import cx.tfe.fennec.util.CritterTracker
+import cx.tfe.fennec.util.trackers.CritterTracker
 import cx.tfe.fennec.util.trackers.SafariInstanceTracker
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphicsExtractor

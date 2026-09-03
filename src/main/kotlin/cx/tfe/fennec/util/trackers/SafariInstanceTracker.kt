@@ -2,7 +2,6 @@ package cx.tfe.fennec.util.trackers
 
 import com.google.common.eventbus.Subscribe
 import cx.tfe.fennec.events.Event
-import cx.tfe.fennec.util.CritterTracker
 import cx.tfe.fennec.util.Helpers.debug
 import cx.tfe.fennec.util.Helpers.noControlCodes
 import net.minecraft.client.multiplayer.chat.GuiMessageSource

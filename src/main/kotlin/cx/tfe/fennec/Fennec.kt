@@ -5,7 +5,7 @@ import cx.tfe.fennec.events.Event
 import cx.tfe.fennec.events.EventBus
 import cx.tfe.fennec.features.impl.safari.SafariOverlay
 import cx.tfe.fennec.util.trackers.BiomeTracker
-import cx.tfe.fennec.util.CritterTracker
+import cx.tfe.fennec.util.trackers.CritterTracker
 import cx.tfe.fennec.util.trackers.CritterDetectionTracker
 import cx.tfe.fennec.util.trackers.SafariInstanceTracker
 import net.fabricmc.api.ModInitializer
