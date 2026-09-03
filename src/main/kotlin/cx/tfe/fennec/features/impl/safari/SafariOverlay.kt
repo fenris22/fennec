@@ -1,6 +1,7 @@
 package cx.tfe.fennec.features.impl.safari
 
 import cx.tfe.fennec.Fennec
+import cx.tfe.fennec.config.ConfigManager
 import cx.tfe.fennec.data.Biomes
 import cx.tfe.fennec.data.Critters
 import cx.tfe.fennec.features.Category
@@ -30,6 +31,16 @@ object SafariOverlay : Module("safariOverlay","Safari Overlay", Category.SAFARI)
     private const val HEADER_COLOR = 0xFFFFFFFF.toInt()
     private const val ACTIVE_HEADER_COLOR = 0xFFFFD966.toInt()
     private const val LINE_BASE_COLOR = 0xFFFFFFFF.toInt()
+
+    override fun onEnable() {
+        ConfigManager.config.safariOverlayEnabled = true
+        ConfigManager.save()
+    }
+
+    override fun onDisable() {
+        ConfigManager.config.safariOverlayEnabled = false
+        ConfigManager.save()
+    }
 
     fun render(graphics: GuiGraphicsExtractor, delta: DeltaTracker) {
         if (!SafariInstanceTracker.inSafariInstance) return

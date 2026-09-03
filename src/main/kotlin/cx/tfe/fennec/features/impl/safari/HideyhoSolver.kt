@@ -2,6 +2,7 @@ package cx.tfe.fennec.features.impl
 
 import com.google.common.eventbus.Subscribe
 import cx.tfe.fennec.Fennec
+import cx.tfe.fennec.config.ConfigManager
 import cx.tfe.fennec.data.Critters
 import cx.tfe.fennec.events.Event
 import cx.tfe.fennec.features.Category
@@ -30,6 +31,16 @@ object HideyhoSolver: Module("hideyhoSolver","Hideyho Solver", Category.SAFARI) 
     fun reset() {
         detected = false
         talkedToHideyho = false
+    }
+
+    override fun onEnable() {
+        ConfigManager.config.hideyhoSolver = true
+        ConfigManager.save()
+    }
+
+    override fun onDisable() {
+        ConfigManager.config.hideyhoSolver = false
+        ConfigManager.save()
     }
 
     @Subscribe

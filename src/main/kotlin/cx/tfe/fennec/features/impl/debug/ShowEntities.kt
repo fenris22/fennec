@@ -1,5 +1,6 @@
 package cx.tfe.fennec.features.impl.debug
 
+import cx.tfe.fennec.config.ConfigManager
 import cx.tfe.fennec.features.Category
 import cx.tfe.fennec.features.Module
 
@@ -16,4 +17,16 @@ import cx.tfe.fennec.features.Module
  * it just stops overriding the return value and everything goes back to
  * however it normally would've rendered.
  */
-object ShowEntities : Module("highlightMobs", "Highlight Mobs", Category.DEBUG) { }
+object ShowEntities : Module("highlightMobs", "Highlight Mobs", Category.DEBUG) {
+
+    override fun onEnable() {
+        ConfigManager.config.highlightMobs = true
+        ConfigManager.save()
+    }
+
+    override fun onDisable() {
+        ConfigManager.config.highlightMobs = false
+        ConfigManager.save()
+    }
+
+}

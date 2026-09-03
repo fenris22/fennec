@@ -1,8 +1,12 @@
 package cx.tfe.fennec
 
 import cx.tfe.fennec.commands.mainCommand
+import cx.tfe.fennec.config.ConfigManager
+import cx.tfe.fennec.config.FennecConfig
 import cx.tfe.fennec.events.Event
 import cx.tfe.fennec.events.EventBus
+import cx.tfe.fennec.features.impl.HideyhoSolver
+import cx.tfe.fennec.features.impl.debug.ShowEntities
 import cx.tfe.fennec.features.impl.safari.SafariOverlay
 import cx.tfe.fennec.util.trackers.BiomeTracker
 import cx.tfe.fennec.util.CritterTracker
@@ -48,6 +52,11 @@ object Fennec : ModInitializer {
 		EventBus.register(BiomeTracker)
 		EventBus.register(SafariInstanceTracker)
 		EventBus.register(CritterDetectionTracker)
+
+		ConfigManager.load()
+		if (ConfigManager.config.safariOverlayEnabled) SafariOverlay.toggle()
+		if (ConfigManager.config.hideyhoSolver) HideyhoSolver.toggle()
+		if (ConfigManager.config.highlightMobs) ShowEntities.toggle()
 
 		LOGGER.info("Initialized fennec mod!")
 	}
