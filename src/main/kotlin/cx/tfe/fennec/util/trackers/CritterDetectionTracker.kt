@@ -31,15 +31,6 @@ object CritterDetectionTracker {
 
     private val detected: MutableMap<Critters, Int> = mutableMapOf()
 
-    // Armor stand names aren't guaranteed to be exactly the critter's
-    // gameName — they can come with a prefix/suffix (rank tag, a symbol,
-    // level marker, etc). Matching on \bgameName\b instead of an exact
-    // string means any of that surrounding text is ignored, while the word
-    // boundaries still stop this from matching a name that merely contains
-    // the critter's name as part of a longer unrelated word. Sorted longest
-    // name first so a critter whose name happens to contain a shorter
-    // critter's name as a whole word (none currently do, but just in case)
-    // matches the more specific one first.
     private val nameMatchers: List<Pair<Critters, Regex>> =
         Critters.entries
             .sortedByDescending { it.gameName.length }

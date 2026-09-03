@@ -15,20 +15,4 @@ object Helpers {
     //Removes minecraft color code symbols
     fun String.noControlCodes(): String = replace(Regex("§."), "")
 
-    /**
-     * Sends a command as if the player typed it in chat. `command` should
-     * NOT include the leading "/" — sendCommand expects the bare command
-     * text, same as vanilla's ChatScreen strips the "/" before calling this.
-     *
-     * Uses the signed path (sendCommand), which is what a real player
-     * typing a command in chat goes through. If that ever causes problems
-     * — e.g. no signing key available, or you just don't care about
-     * signing for a custom plugin command like this one — swap to
-     * connection.sendUnsignedCommand(command) instead, which returns a
-     * Boolean for whether it actually sent.
-     */
-    fun sendCommand(command: String) { mc.player?.connection?.sendCommand(command.removePrefix("/")) }
-
-
-
 }
