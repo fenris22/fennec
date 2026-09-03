@@ -1,0 +1,18 @@
+{
+	"required": true,
+	"package": "cx.tfe.fennec.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"ChatMixin",
+		"EntityGlowMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	},
+	"client": [
+		"ChatMixin"
+	]
+}
